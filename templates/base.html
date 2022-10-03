@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Website title -->
+    <title>Todo App</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+</head>
+
+<body>
+    <div style="margin-top: 50px;" class="ui container">
+        <!-- Create website header -->
+        <h1 class="ui center aligned header">To Do App</h1>
+        <!-- Display task counters -->
+        <p class="ui big header">Number of tasks: {{num_tasks }} | Number of completed tasks: {{ num_completed }}</p>
+        <!-- Declare todo form -->
+        <form class="ui form" action="/add" method="post">
+            <!-- Input box for task name -->
+            <div class="field">
+                <label>Todo Title</label>
+                <input type="text" name="title" placeholder="Enter Todo..."><br>
+            </div>
+            <!-- Submit button for todo list -->
+            <button class="ui blue button" type="submit">Add</button>
+        </form>
+
+        <hr>
+
+        <!-- Create todo item for each item in list -->
+        {% for todo in todo_list %}
+        <div class="ui segment">
+            <!-- Text element for todo id and name  -->
+            <p class="ui big header">{{todo.id }} | {{ todo.title }}</p>
+
+            <!-- Show not complete label if todo is not complete -->
+            {% if todo.complete == False %}
+            <span class="ui gray label">Not Complete</span>
+            <!-- Show complete label if todo is complete -->
+            {% else %}
+            <span class="ui green label">Completed</span>
+            {% endif %}
+
+            <!-- Update button for changing task status -->
+            <a class="ui blue button" href="/update/{{ todo.id }}">Update</a>
+            <!-- Delete button for deleting a task -->
+            <a class="ui red button" href="/delete/{{ todo.id }}">Delete</a>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+
+</html>
