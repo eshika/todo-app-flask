@@ -36,7 +36,7 @@ def home():
 def add():
     # Get task name from the form
     title = request.form.get("title")
-    # Create new todo with title from form 
+    # Create new todo with title from form
     new_todo = Todo(title=title, complete=False)
     # Add new todo to the db
     db.session.add(new_todo)
@@ -71,5 +71,5 @@ def delete(todo_id):
 
 if __name__ == "__main__":
     db.create_all()
-    # Run app 
+    # Run app
     app.run(debug=True)
