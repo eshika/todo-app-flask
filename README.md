@@ -34,3 +34,4 @@ $ flask run
 This site was created using the following tutorials:
 * https://www.python-engineer.com/posts/flask-todo-app/
 * https://github.com/python-engineer/flask-todo
+* https://blog.devgenius.io/how-to-create-a-todo-application-with-flask-21b71651c7dc
