@@ -9,31 +9,42 @@ On this To Do App website, users can create and complete tasks which are added t
 Clone repository and navigate into the directory
 ```
 git clone https://github.com/eshika/todo-app-flask.git
-cd todo-app-flask
+cd todo-app-flask/
+```
+Create Virtual Environment
+```
+python3 -m venv venv
+```
+Activate it
+```
+. venv/bin/activate
+```
+or on Windows
+```
+venv\Scripts\activate
 ```
 
-Install Flask
-
+Install Dependencies
 ```
-$ pip install Flask
-$ pip install Flask-SQLAlchemy
+pip install -r requirements.txt
 ```
 Set environment variables in terminal
 ```
-$ export FLASK_APP=app.py
-$ export FLASK_ENV=development
+export FLASK_APP=app.py
+export FLASK_ENV=development
 ```
 or on Windows
 
 ```
-$ set FLASK_APP=app.py
-$ set FLASK_ENV=development
+set FLASK_APP=app.py
+set FLASK_ENV=development
 ```
 Run the app
 ```
-$ flask run
+flask run
 ```
 
+Open the url specified to see the webpage.
 
 ## References
 
