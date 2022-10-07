@@ -6,6 +6,12 @@ On this To Do App website, users can create and complete tasks which are added t
 
 ## Usage
 
+Clone repository and navigate into the directory
+```
+git clone https://github.com/eshika/todo-app-flask.git
+cd todo-app-flask
+```
+
 Install Flask
 
 ```
